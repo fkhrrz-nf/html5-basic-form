@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML5 Form</title>
+
+    <style>
+        body {
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+        form {
+            /* width: 25vw; */
+            margin: auto;
+            vertical-align: middle;
+        }
+        .input-field {
+            margin: 1vh 0;
+        }
+        
+        /* Style Public */
+        input:focus ~ .floating-label,
+        input:not(:focus):valid ~ .floating-label{
+            margin-top: 1pt;
+            margin-left: -25vw;
+            font-size: 11px;
+            text-decoration: underline;
+            opacity: 1;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            height: 50px;
+            margin-bottom: 5pt;
+        }
+
+        .inputText {
+            font-size: 14px;
+            width: 25vw;
+            height: 50px;
+            margin-bottom: 5pt;
+        }
+
+        .input-text > .floating-label {
+            position: absolute;
+            pointer-events: none;
+            margin-left: -25vw;
+            margin-top: 20px;
+            transition: 0.2s ease all;
+        }
+
+        .input-date > .floating-label {
+            position: absolute;
+            pointer-events: none;
+            margin-left: -25vw;
+            margin-top: 1pt;
+            font-size: 11px;
+            transition: 0.2s ease all;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Pendaftaran Mahasiswa</legend>
+                <h3>Data Diri</h3>
+                <div class='input-text'>
+                    <input type="text" class="inputText" required/>
+                    <span class="floating-label">Nama</span>
+                </div>
+                <div class='input-text'>
+                    <input type="text" class="inputText" required/>
+                    <span class="floating-label">Tempat Lahir</span>
+                </div>
+                <div class='input-date'>
+                    <input type="date" class="inputText" required/>
+                    <span class="floating-label">Tanggal Lahir</span>
+                </div>
+                <div class='input-text'>
+                    <input type="text" class="inputText" required/>
+                    <span class="floating-label">Alamat</span>
+                </div>
+                <hr />
+                <div class='input-date'>
+                    <input type="submit" value="Kirim" />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    
+</body>
+</html>
