@@ -10,22 +10,38 @@
             margin: auto;
             font-family: Arial, Helvetica, sans-serif;
         }
+
         .container {
             width: 100vw;
             height: 100vh;
             display: flex;
             justify-content: center;
         }
+
         form {
             /* width: 25vw; */
             margin: auto;
             vertical-align: middle;
         }
+
+        textarea {
+            resize: vertical;
+            padding: 1rem .5em;
+        }
+
         .input-field {
             margin: 1vh 0;
         }
         
-        /* Style Public */
+        textarea:focus ~ .floating-label,
+        textarea:valid ~ .floating-label{
+            margin-top: 1pt;
+            margin-left: -25vw;
+            font-size: 11px;
+            text-decoration: underline;
+            opacity: 1;
+        }
+        
         input:focus ~ .floating-label,
         input:not(:focus):valid ~ .floating-label{
             margin-top: 1pt;
@@ -61,6 +77,15 @@
             transition: 0.2s ease all;
         }
 
+        .input-textarea > .floating-label {
+            display: inline-block;
+            position: absolute;
+            pointer-events: none;
+            margin-left: -25vw;
+            margin-top: 20px;
+            transition: 0.2s ease all;
+        }
+
         .input-date > .floating-label {
             position: absolute;
             pointer-events: none;
@@ -78,7 +103,8 @@
         <form action="#" method="post">
             <fieldset>
                 <legend>Pendaftaran Mahasiswa</legend>
-                <h3>Data Diri</h3>
+
+                <h3>Informasi Data Diri</h3>
                 <div class='input-text'>
                     <input type="text" class="inputText" required/>
                     <span class="floating-label">Nama</span>
@@ -91,11 +117,23 @@
                     <input type="date" class="inputText" required/>
                     <span class="floating-label">Tanggal Lahir</span>
                 </div>
-                <div class='input-text'>
-                    <input type="text" class="inputText" required/>
+                <hr />
+
+                <h3>Informasi Kontak</h3>
+                <div class='input-textarea'>
+                    <textarea class="inputText" required></textarea>
                     <span class="floating-label">Alamat</span>
                 </div>
+                <div class='input-text'>
+                    <input type="text" class="inputText" required/>
+                    <span class="floating-label">Nomor Telpon</span>
+                </div>
+                <div class='input-text'>
+                    <input type="text" class="inputText" required/>
+                    <span class="floating-label">Email</span>
+                </div>
                 <hr />
+
                 <div class='input-date'>
                     <input type="submit" value="Kirim" />
                 </div>
