@@ -41,6 +41,23 @@
             text-decoration: underline;
             opacity: 1;
         }
+
+        .selector {
+            font-size: 14px;
+            width: 31rem;
+            height: 50px;
+            margin-bottom: 5pt;
+        }
+
+        .select-box > .floating-label {
+            text-decoration: underline;
+            position: absolute;
+            pointer-events: none;
+            margin-left: -25vw;
+            margin-top: 1pt;
+            font-size: 11px;
+            transition: 0.2s ease all;
+        }
         
         input:focus ~ .floating-label,
         input:not(:focus):valid ~ .floating-label{
@@ -54,6 +71,7 @@
         input[type="submit"]:hover {
             background-color: #ddd;
         }
+
         input[type="submit"] {
             cursor: pointer;
             font-size: 14px;
@@ -64,7 +82,7 @@
 
         .inputText {
             font-size: 14px;
-            width: 25vw;
+            width: 30rem;
             height: 50px;
             margin-bottom: 5pt;
         }
@@ -131,6 +149,25 @@
                 <div class='input-text'>
                     <input type="text" class="inputText" required/>
                     <span class="floating-label">Email</span>
+                </div>
+                <hr />
+
+                <h3>Peminatan</h3>
+                <div class='select-box'>
+                    <select class="selector">
+                        <option>Teknik Informatika</option>
+                        <option>Sistem Informasi</option>
+                        <option>Ilmu Komputer</option>
+                    </select>
+                    <span class="floating-label">Program Studi</span>
+                </div>
+                <div class='select-box'>
+                    <select class="selector">
+                        <option>Regular Pagi</option>
+                        <option>Regular Malam</option>
+                        <option>Ekstensi</option>
+                    </select>
+                    <span class="floating-label">Kelas</span>
                 </div>
                 <hr />
 
